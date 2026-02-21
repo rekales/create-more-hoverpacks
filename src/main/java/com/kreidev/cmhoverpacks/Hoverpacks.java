@@ -1,4 +1,4 @@
-package com.kreidev.cmbase;
+package com.kreidev.cmhoverpacks;
 
 import com.simibubi.create.AllCreativeModeTabs;
 import com.simibubi.create.foundation.data.CreateRegistrate;
@@ -14,9 +14,9 @@ import net.neoforged.fml.ModContainer;
 
 import net.neoforged.fml.common.Mod;
 
-@Mod(ExampleMod.MOD_ID)
-public class ExampleMod {
-    public static final String MOD_ID = "cmbase";
+@Mod(Hoverpacks.MOD_ID)
+public class Hoverpacks {
+    public static final String MOD_ID = "cmhoverpacks";
 
     @SuppressWarnings("unused")
     public static final Logger LOGGER = LogUtils.getLogger();
@@ -26,10 +26,10 @@ public class ExampleMod {
             .defaultCreativeTab(AllCreativeModeTabs.BASE_CREATIVE_TAB.getKey());
 
 
-    public ExampleMod(IEventBus modEventBus, ModContainer modContainer) {
+    public Hoverpacks(IEventBus modEventBus, ModContainer modContainer) {
         modContainer.registerConfig(ModConfig.Type.COMMON, CommonConfig.SPEC);
         REGISTRATE.registerEventListeners(modEventBus);
-        modEventBus.addListener(ExampleMod::clientInit);
+        modEventBus.addListener(Hoverpacks::clientInit);
         modEventBus.addListener(CommonConfig::onLoad);
         modEventBus.addListener(CommonConfig::onReload);
     }
