@@ -11,7 +11,16 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "cmhoverpacks:hoverpack_placeable"
+          "functions": [
+            {
+              "function": "minecraft:copy_components",
+              "include": [
+                "create:banktank_air"
+              ],
+              "source": "block_entity"
+            }
+          ],
+          "name": "cmhoverpacks:hoverpack"
         }
       ],
       "rolls": 1.0
