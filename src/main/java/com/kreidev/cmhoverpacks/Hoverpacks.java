@@ -55,7 +55,7 @@ public class Hoverpacks {
 
     public static final ItemEntry<HoverpackItem> HOVERPACK_ITEM = REGISTRATE
             .item("hoverpack", (p) ->
-                    new HoverpackItem(AllArmorMaterials.COPPER, p, resLoc("hoverpack"), Hoverpacks.HOVERPACK_PLACEABLE_ITEM))
+                    new HoverpackItem(AllArmorMaterials.COPPER, p, Create.asResource("copper_diving"), Hoverpacks.HOVERPACK_PLACEABLE_ITEM))
             .model(AssetLookup.customGenericItemModel("_", "item"))
             .tag(AllTags.AllItemTags.PRESSURIZED_AIR_SOURCES.tag)
             .tag(ItemTags.CHEST_ARMOR)
