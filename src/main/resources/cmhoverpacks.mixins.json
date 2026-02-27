@@ -4,6 +4,7 @@
   "package": "com.kreidev.cmhoverpacks.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "BacktankArmorLayerMixin",
     "PlayerMixin"
   ],
   "minVersion": "0.8.5"
