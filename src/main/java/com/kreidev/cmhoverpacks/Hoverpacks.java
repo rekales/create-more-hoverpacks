@@ -2,9 +2,7 @@ package com.kreidev.cmhoverpacks;
 
 import com.simibubi.create.*;
 import com.simibubi.create.content.equipment.armor.AllArmorMaterials;
-import com.simibubi.create.content.equipment.armor.BacktankBlockEntity;
 import com.simibubi.create.content.equipment.armor.BacktankItem;
-import com.simibubi.create.content.equipment.armor.BacktankRenderer;
 import com.simibubi.create.content.kinetics.base.SingleAxisRotatingVisual;
 import com.simibubi.create.foundation.data.AssetLookup;
 import com.simibubi.create.foundation.data.CreateRegistrate;
@@ -15,6 +13,7 @@ import com.tterrag.registrate.util.entry.BlockEntry;
 import com.tterrag.registrate.util.entry.ItemEntry;
 import com.tterrag.registrate.util.nullness.NonNullUnaryOperator;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.level.ItemLike;
@@ -69,11 +68,11 @@ public class Hoverpacks {
             .transform(hoverpack(Hoverpacks.HOVERPACK_ITEM::get))
             .register();
 
-    public static final BlockEntityEntry<BacktankBlockEntity> HOVERPACK_BLOCK_ENTITY = REGISTRATE
-            .blockEntity("hoverpack", BacktankBlockEntity::new)
+    public static final BlockEntityEntry<HoverpackBlockEntity> HOVERPACK_BLOCK_ENTITY = REGISTRATE
+            .blockEntity("hoverpack", HoverpackBlockEntity::new)
             .visual(() -> SingleAxisRotatingVisual::backtank)
             .validBlocks(HOVERPACK_BLOCK)
-            .renderer(() -> BacktankRenderer::new)
+//            .renderer(() -> HoverpackBlockRenderer::new)
             .register();
 
     // I'm not sure why there needs to be a separate item for this.
@@ -95,7 +94,10 @@ public class Hoverpacks {
     }
 
     public static void clientInit(final FMLClientSetupEvent event) {
-
+        BlockEntityRenderers.register(
+                HOVERPACK_BLOCK_ENTITY.get(),
+                HoverpackBlockRenderer::new
+        );
     }
 
     public static ResourceLocation resLoc(String path) {
