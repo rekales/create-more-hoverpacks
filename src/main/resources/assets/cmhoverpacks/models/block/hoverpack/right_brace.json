@@ -1,0 +1,35 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"textures": {
+		"0": "cmhoverpacks:block/copper_hoverpack",
+		"particle": "cmhoverpacks:block/copper_hoverpack"
+	},
+	"elements": [
+		{
+			"from": [12.01, 6.01, 4.51],
+			"to": [14.99, 7.99, 6.49],
+			"rotation": {"angle": 0, "axis": "y", "origin": [14, 7, 6]},
+			"faces": {
+				"north": {"uv": [12.5, 3, 13.5, 4.5], "rotation": 90, "texture": "#0"},
+				"south": {"uv": [12.5, 3, 13.5, 4.5], "rotation": 90, "texture": "#0"},
+				"up": {"uv": [12.5, 3, 13.5, 4.5], "rotation": 90, "texture": "#0"},
+				"down": {"uv": [12.5, 3, 13.5, 4.5], "rotation": 90, "texture": "#0"}
+			}
+		}
+	],
+	"display": {
+		"head": {
+			"translation": [0, -9.6, 12.8],
+			"scale": [1.6, 1.6, 1.6]
+		}
+	},
+	"groups": [
+		{
+			"name": "RightBrace",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": [0]
+		}
+	]
+}

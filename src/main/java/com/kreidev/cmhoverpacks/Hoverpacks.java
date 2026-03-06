@@ -97,6 +97,7 @@ public class Hoverpacks {
                 HOVERPACK_BLOCK_ENTITY.get(),
                 HoverpackRenderer::new
         );
+        HoverpackRenderer.init();
     }
 
     public static ResourceLocation resLoc(String path) {
