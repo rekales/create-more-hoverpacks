@@ -43,6 +43,7 @@ dependencies {
 
     // Dev QOL
     runtimeOnly("curse.maven:jei-238222:7270455")
+    runtimeOnly("maven.modrinth:freecam:1.3.0+mc1.21.1-neoforge")
 }
 
 neoForge {
