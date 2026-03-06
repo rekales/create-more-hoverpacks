@@ -19,6 +19,6 @@ public class HoverpackGeoModel extends GeoModel<HoverpackItem> {
 
     @Override
     public ResourceLocation getTextureResource(HoverpackItem animatable) {
-        return resLoc("textures/copper_hoverpack.png");
+        return resLoc("textures/copper_hoverpack_2.png");
     }
 }

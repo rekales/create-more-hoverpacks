@@ -3,7 +3,6 @@ package com.kreidev.cmhoverpacks;
 import com.simibubi.create.*;
 import com.simibubi.create.content.equipment.armor.AllArmorMaterials;
 import com.simibubi.create.content.equipment.armor.BacktankItem;
-import com.simibubi.create.content.kinetics.base.SingleAxisRotatingVisual;
 import com.simibubi.create.foundation.data.AssetLookup;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.data.SharedProperties;
@@ -70,9 +69,9 @@ public class Hoverpacks {
 
     public static final BlockEntityEntry<HoverpackBlockEntity> HOVERPACK_BLOCK_ENTITY = REGISTRATE
             .blockEntity("hoverpack", HoverpackBlockEntity::new)
-            .visual(() -> SingleAxisRotatingVisual::backtank)
+//            .visual(() -> SingleAxisRotatingVisual::backtank)
             .validBlocks(HOVERPACK_BLOCK)
-//            .renderer(() -> HoverpackBlockRenderer::new)
+//            .renderer(() -> HoverpackRenderer::new)
             .register();
 
     // I'm not sure why there needs to be a separate item for this.
@@ -96,7 +95,7 @@ public class Hoverpacks {
     public static void clientInit(final FMLClientSetupEvent event) {
         BlockEntityRenderers.register(
                 HOVERPACK_BLOCK_ENTITY.get(),
-                HoverpackBlockRenderer::new
+                HoverpackRenderer::new
         );
     }
 
