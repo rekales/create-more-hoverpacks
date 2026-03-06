@@ -3,14 +3,18 @@ package com.kreidev.cmhoverpacks;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.simibubi.create.AllBlocks;
 import com.simibubi.create.AllPartialModels;
+import com.simibubi.create.content.equipment.armor.BacktankBlock;
 import com.simibubi.create.content.equipment.armor.BacktankBlockEntity;
 import com.simibubi.create.content.kinetics.base.KineticBlockEntityRenderer;
 import dev.engine_room.flywheel.lib.model.baked.PartialModel;
+import net.createmod.catnip.animation.AnimationTickHolder;
+import net.createmod.catnip.math.AngleHelper;
 import net.createmod.catnip.render.CachedBuffers;
 import net.createmod.catnip.render.SuperByteBuffer;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
+import net.minecraft.core.Direction;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class HoverpackRenderer extends KineticBlockEntityRenderer<BacktankBlockEntity> {
@@ -26,21 +30,18 @@ public class HoverpackRenderer extends KineticBlockEntityRenderer<BacktankBlockE
         RenderType type = getRenderType(be, state);
         renderRotatingBuffer(be, getRotatedModel(be, state), ms, buffer.getBuffer(type), light);
 
+        BlockState blockState = be.getBlockState();
 
-
-//        super.renderSafe(be, partialTicks, ms, buffer, light, overlay);
-
-//        BlockState blockState = be.getBlockState();
-//        SuperByteBuffer cogs = CachedBuffers.partial(getCogsModel(blockState), blockState);
-//        cogs.center()
-//                .rotateYDegrees(180 + AngleHelper.horizontalAngle(blockState.getValue(BacktankBlock.HORIZONTAL_FACING)))
-//                .uncenter()
-//                .translate(0, 6.5f / 16, 11f / 16)
-//                .rotate(AngleHelper.rad(be.getSpeed() / 4f * AnimationTickHolder.getRenderTime(be.getLevel()) % 360),
-//                        Direction.EAST)
-//                .translate(0, -6.5f / 16, -11f / 16);
-//        cogs.light(light)
-//                .renderInto(ms, buffer.getBuffer(RenderType.solid()));
+        SuperByteBuffer cogs = CachedBuffers.partial(getCogsModel(blockState), blockState);
+        cogs.center()
+                .rotateYDegrees(180 + AngleHelper.horizontalAngle(blockState.getValue(BacktankBlock.HORIZONTAL_FACING)))
+                .uncenter()
+                .translate(0, 6.5f / 16, 11f / 16)
+                .rotate(AngleHelper.rad(be.getSpeed() / 4f * AnimationTickHolder.getRenderTime(be.getLevel()) % 360),
+                        Direction.EAST)
+                .translate(0, -6.5f / 16, -11f / 16);
+        cogs.light(light)
+                .renderInto(ms, buffer.getBuffer(RenderType.solid()));
     }
 
     @Override
