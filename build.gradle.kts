@@ -18,7 +18,6 @@ repositories {
     maven("https://maven.createmod.net") // Create, Ponder, Flywheel
     maven("https://maven.ithundxr.dev/snapshots") // Registrate
     maven("https://maven.blamejared.com") // JEI, Vazkii's Mods
-    maven("https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/") // GeckoLib
 }
 
 dependencies {
@@ -28,8 +27,6 @@ dependencies {
     runtimeOnly("dev.engine-room.flywheel:flywheel-neoforge-${property("minecraft_version")}:${property("flywheel_version")}")
     implementation("com.tterrag.registrate:Registrate:${property("registrate_version")}")
 
-    implementation("software.bernie.geckolib:geckolib-neoforge-${property("minecraft_version")}:${property("geckolib_version")}")
-
     runtimeOnly("curse.maven:kotlin-for-forge-351264:7471280")
     runtimeOnly("curse.maven:create-jetpack-655608:7285435")
 
@@ -38,8 +35,6 @@ dependencies {
     runtimeOnly("curse.maven:create-stuff-additions-466792:6448012")
     runtimeOnly("maven.modrinth:builders-jetpack-mod:2.0-1.21.1")
     runtimeOnly("maven.modrinth:createaddition:neoforge-1.21.1-1.5.10")
-
-
 
     // Dev QOL
     runtimeOnly("curse.maven:jei-238222:7270455")

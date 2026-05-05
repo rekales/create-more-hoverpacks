@@ -34,10 +34,3 @@ type="required"
 versionRange="${create_version_range}"
 ordering="NONE"
 side="BOTH"
-
-[[dependencies.${mod_id}]]
-modId="geckolib"
-type="required"
-versionRange="${geckolib_version_range}"
-ordering="NONE"
-side="BOTH"
